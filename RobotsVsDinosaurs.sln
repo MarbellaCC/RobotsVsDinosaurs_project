@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RobotsVsDinosaurs", "RobotsVsDinosaurs\RobotsVsDinosaurs.csproj", "{D8EF1C1F-8AC2-4C24-8F32-FE3C2CB2A7C3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RobotsVsDinosaurs", "RobotsVsDinosaurs.csproj", "{D8EF1C1F-8AC2-4C24-8F32-FE3C2CB2A7C3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,6 +20,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {A1829E79-0B92-4AC6-9043-6C9D328561AB}
+		SolutionGuid = {F7F3A0E0-165C-4B70-8E79-1B09E1C0A576}
 	EndGlobalSection
 EndGlobal
