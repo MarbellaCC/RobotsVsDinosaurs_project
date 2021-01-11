@@ -12,12 +12,9 @@ namespace RobotsVsDinosaurs
         public List<Dinosaur> dinosaurs;
 
 
-        //Constructor
-        public Herd()
-        {
-            
-        }
-       
+        
+        
+        
 
 
     }

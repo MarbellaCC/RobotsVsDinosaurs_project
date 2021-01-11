@@ -10,23 +10,34 @@ namespace RobotsVsDinosaurs
     {
         //Member Variables
         public string name;
-        public int health;
+        public int roboHealth;
         public int powerLevel;
-        public string weapon;
+        public List<Weapon> weapons;
         public int attackPower;
         public List<Robot> robots;
 
         //Constructor
-        public Robot(string name, int powerLevel, string weapon, int attackPower)
+        public Robot(string name, int powerLevel, int attackPower)
         {
             this.name = name;
             this.powerLevel = powerLevel;
-            health = 100;
-            this.weapon = weapon;
+            roboHealth = 100;
+            weapons = new List<Weapon>();
             this.attackPower = attackPower;
             robots = new List<Robot>();
+        }
+
+        //Member Methods
+        public void AttackDinosaur(Dinosaur dinosaurs, int roboHealth)
+        {
+            dinosaurs.dinoHealth -= attackPower;
+
+            
+            
             
         }
+
+
 
 
 

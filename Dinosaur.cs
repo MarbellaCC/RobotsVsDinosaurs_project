@@ -10,7 +10,7 @@ namespace RobotsVsDinosaurs
     {
         //Member Variables
         public string type;
-        public int health;
+        public int dinoHealth;
         public int energy;
         public int attackPower;
         public List<Dinosaur> dinosaurs;
@@ -19,10 +19,22 @@ namespace RobotsVsDinosaurs
         public Dinosaur(string type, int energy, int attackPower)
         {
             this.type = type;
-            health = 100;
+            dinoHealth = 100;
             this.energy = energy;
             this.attackPower = attackPower;
             dinosaurs = new List<Dinosaur>();
+        }
+
+        //Member Methods
+        public void AttackRobot(Robot robots, int dinoHealth)
+        {
+            robots.roboHealth -= attackPower;
+
+            
+                
+
+            
+            
         }
     }
 }
