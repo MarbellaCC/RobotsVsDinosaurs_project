@@ -10,13 +10,15 @@ namespace RobotsVsDinosaurs
     {
         //Member Variables
         public string name;
-        public List<Weapon> weapons;
+        public int attackPower;
+        
 
         //Constructor
-        public Weapon(string name)
+        public Weapon(string name, int attackPower)
         {
             this.name = name;
-            weapons = new List<Weapon>();
+            this.attackPower = attackPower;
+            
         }
 
     }

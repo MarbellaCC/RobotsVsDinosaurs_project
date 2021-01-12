@@ -22,19 +22,14 @@ namespace RobotsVsDinosaurs
             dinoHealth = 100;
             this.energy = energy;
             this.attackPower = attackPower;
-            dinosaurs = new List<Dinosaur>();
         }
 
         //Member Methods
-        public void AttackRobot(Robot robots, int dinoHealth)
+        public void AttackRobot(Robot robots)
         {
             robots.roboHealth -= attackPower;
-
-            
-                
-
-            
-            
         }
-    }
+    
+    
+    }   
 }

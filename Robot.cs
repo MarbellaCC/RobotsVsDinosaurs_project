@@ -13,30 +13,31 @@ namespace RobotsVsDinosaurs
         public int roboHealth;
         public int powerLevel;
         public List<Weapon> weapons;
-        public int attackPower;
-        public List<Robot> robots;
+        public Weapon Chainsaw = new Weapon("Chainsaw", 18);
+        public Weapon IronFist = new Weapon("Iron Fist", 18);
+        public Weapon FlameThrower = new Weapon("Flame Thrower", 18);
+
+
 
         //Constructor
-        public Robot(string name, int powerLevel, int attackPower)
+        public Robot(string name, int powerLevel)
         {
             this.name = name;
             this.powerLevel = powerLevel;
             roboHealth = 100;
             weapons = new List<Weapon>();
-            this.attackPower = attackPower;
-            robots = new List<Robot>();
+            weapons.Add(Chainsaw);
+            weapons.Add(IronFist);
+            weapons.Add(FlameThrower);
+            
         }
+
 
         //Member Methods
-        public void AttackDinosaur(Dinosaur dinosaurs, int roboHealth)
+        public void AttackDino(Dinosaur dinosaurs, Weapon weapons)
         {
-            dinosaurs.dinoHealth -= attackPower;
-
-            
-            
-            
+            dinosaurs.dinoHealth -= weapons.attackPower;
         }
-
 
 
 

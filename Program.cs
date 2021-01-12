@@ -11,7 +11,7 @@ namespace RobotsVsDinosaurs
         static void Main(string[] args)
         {
             Battlefield battlefield = new Battlefield();
-            battlefield.CommenceBattle(dinosaurs, robots);
+            Battlefield.CommenceBattle(Robot robots, Dinosaur dinosaur, Weapon weapons);
         }
     }
 }
