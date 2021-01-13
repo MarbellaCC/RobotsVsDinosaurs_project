@@ -13,9 +13,9 @@ namespace RobotsVsDinosaurs
         public int roboHealth;
         public int powerLevel;
         public List<Weapon> weapons;
-        public Weapon Chainsaw = new Weapon("Chainsaw", 18);
-        public Weapon IronFist = new Weapon("Iron Fist", 18);
-        public Weapon FlameThrower = new Weapon("Flame Thrower", 18);
+        public Weapon Chainsaw = new Weapon("Chainsaw", 20);
+        public Weapon IronFist = new Weapon("Iron Fist", 20);
+        public Weapon FlameThrower = new Weapon("Flame Thrower", 20);
 
 
 
@@ -37,6 +37,7 @@ namespace RobotsVsDinosaurs
         public void AttackDino(Dinosaur dinosaurs, Weapon weapons)
         {
             dinosaurs.dinoHealth -= weapons.attackPower;
+            
         }
 
 

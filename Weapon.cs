@@ -16,6 +16,7 @@ namespace RobotsVsDinosaurs
         //Constructor
         public Weapon(string name, int attackPower)
         {
+
             this.name = name;
             this.attackPower = attackPower;
             

@@ -9,52 +9,107 @@ namespace RobotsVsDinosaurs
     public class Battlefield
     {
         //Member Variables
-        public List<Dinosaur> dinosaurs;
-        public List<Robot> robots;
-        public List<Weapon> weapons;
-
-
+        Herd herd;
+        Fleet fleet;
+        int dinosaurWins;
+        int robotWins;
 
 
         //Constructor
         public Battlefield()
         {
-            
-
-            
+            herd = new Herd();
+            fleet = new Fleet();
+            dinosaurWins = 0;
+            robotWins = 0;
         }
+
 
 
         //Member Methods
-        public void CheckHealth(Robot robots, Dinosaur dinosaurs)
+        public void DisplayWinner()
         {
-            Console.WriteLine("Robot's heath at: " + robots.roboHealth + "Dino's health at: " + dinosaurs.dinoHealth);
-        }
-        public void DisplayWinner(Robot robots, Dinosaur dinosaurs)
-        {
-            if(robots.roboHealth > dinosaurs.dinoHealth)
+            if(robotWins > dinosaurWins)
             {
                 Console.WriteLine("The robots won!!");
             }
-            else if(robots.roboHealth < dinosaurs.dinoHealth)
+            else if(robotWins < dinosaurWins)
             {
                 Console.WriteLine("The dinosaurs won!!");
             }
         }
-        public void CommenceBattle(Robot robots, Dinosaur dinosaurs, Weapon weapons)
+        
+        public void FirstRoundWin()
         {
-            while (robots.roboHealth > 0 && dinosaurs.dinoHealth > 0)
+            if (herd.TRex.dinoHealth > fleet.Destructor.roboHealth)
             {
-                dinosaurs.AttackRobot(robots);
-                CheckHealth(robots, dinosaurs);
-                robots.AttackDino(dinosaurs, weapons);
-                CheckHealth(robots, dinosaurs);
-
+                Console.WriteLine("Dinosaurs won first round");
+                dinosaurWins++;
             }
-            DisplayWinner(robots, dinosaurs);
+            else if (herd.TRex.dinoHealth < fleet.Destructor.roboHealth)
+            {
+                Console.WriteLine("Robots won first round");
+                robotWins++;
+            }
+        }        
+        
+        public void SecondRoundWin()
+        {
+            if (herd.Carcharodontosaurus.dinoHealth > fleet.JawBreaker.roboHealth)
+            {
+                Console.WriteLine("Dinosaurs won second round");
+                dinosaurWins++;
+            }
+            else if (herd.Carcharodontosaurus.dinoHealth < fleet.JawBreaker.roboHealth)
+            {
+                Console.WriteLine("Robots won second round");
+                robotWins++;
+            }
+        }
+            
+        public void ThirdRoundWin()
+        {
+            if (herd.Polacanthus.dinoHealth > fleet.FireBlaze.roboHealth)
+            {
+                Console.WriteLine("Dinosaurs won third round");
+                dinosaurWins++;
+            }
+            else if (herd.Polacanthus.dinoHealth < fleet.FireBlaze.roboHealth)
+            {
+                Console.WriteLine("Robots won third round");
+                robotWins++;
+            }
+        }
+            
+
+            
+        public void CommenceBattle()
+        {
+            while (fleet.Destructor.roboHealth > 0 && herd.TRex.dinoHealth > 0)
+            {
+                fleet.Destructor.AttackDino(herd.TRex, fleet.Destructor.Chainsaw);
+                herd.TRex.AttackRobot(fleet.Destructor);
+                
+            }          
+            while (fleet.JawBreaker.roboHealth > 0 && herd.Carcharodontosaurus.dinoHealth > 0)
+            {
+                fleet.JawBreaker.AttackDino(herd.Carcharodontosaurus, fleet.JawBreaker.IronFist);
+                herd.Carcharodontosaurus.AttackRobot(fleet.JawBreaker);
+            }
+            while (fleet.FireBlaze.roboHealth > 0 && herd.Polacanthus.dinoHealth > 0)
+            {
+                fleet.FireBlaze.AttackDino(herd.Polacanthus, fleet.FireBlaze.IronFist);
+                herd.Polacanthus.AttackRobot(fleet.FireBlaze);
+            }
+            
+            FirstRoundWin();
+            SecondRoundWin();
+            ThirdRoundWin();
+
+            DisplayWinner();
             Console.ReadLine();
-        
-        
+
+
         }
 
 
